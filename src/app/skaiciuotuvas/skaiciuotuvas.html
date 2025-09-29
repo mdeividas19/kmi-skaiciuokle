@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                KMI Skaičiuoklė
+            </div>
+            <div class="card-body">
+                <div class="mb-2">
+                    <label class="form-label">Jūsų kūno svoris (kg):</label>
+                    <input type="text" [(ngModel)]="svoris" class="form-control">
+                </div>
+                <div class="mb-2">
+                    <label class="form-label">Jūsų ūgis (cm):</label>
+                    <input type="text" [(ngModel)]="ugis" class="form-control">
+                </div>
+                <button [disabled]="(svoris==null || ugis==null || !(svoris > 0) || !(ugis > 0))" (click)="skaicuoti()" class="btn btn-success">Skaičiuoti</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Rezultatas
+            </div>
+            <div class="card-body">
+               {{ result }}
+            </div>
+        </div>
+    </div>
+</div>
